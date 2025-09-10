@@ -1,0 +1,36 @@
+.project-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.project-title {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.project-detail {
+  font-size: 1.1em;
+  color: #7f8c8d;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.project-not-found {
+  text-align: center;
+  padding: 50px;
+}
