@@ -1,13 +1,16 @@
 import { Link, useParams } from "react-router-dom";
 import { projects } from "../data/projects";
 import "../styles/ProjectPage.css";
+import { componentMap } from "../routes/lazyComponentMap";
+import { Suspense } from "react";
 
 const ProjectPage = () => {
   const { projectId } = useParams<string>();
-  console.log("projectId");
   const project = projects.find((project) => project.id === projectId);
-  console.log(project);
-  if (!project) {
+  // Get the component from the lazy map
+  const ProjectComponent = projectId ? componentMap[projectId] : null;
+
+  if (!project || !ProjectComponent) {
     return (
       <div className="project-not-found">
         <h2>Project not found!</h2>
@@ -22,11 +25,11 @@ const ProjectPage = () => {
       <Link to="/" className="back-link">
         &larr; Go back to Home
       </Link>
-      <h1 className="project-title">{project.name}</h1>
-      <p className="project-detail">
-        Status: <strong>{project.status}</strong>
-      </p>
-      <div className="project-content"></div>
+      <div className="project-content">
+        <Suspense fallback={<div>Loading Project...</div>}>
+          <ProjectComponent />
+        </Suspense>
+      </div>
     </div>
   );
 };
