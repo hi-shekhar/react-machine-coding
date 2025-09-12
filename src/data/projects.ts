@@ -8,7 +8,7 @@ export interface Project {
 
 export const projects: Project[] = [
   { id: "project-1", name: "Counter", status: "Completed" },
-  { id: "project-2", name: "To-Do List", status: "Pending" },
+  { id: "project-2", name: "To-Do List", status: "Completed" },
   { id: "project-3", name: "Stopwatch", status: "Pending" },
   { id: "project-4", name: "Accordion", status: "Pending" },
   { id: "project-5", name: "Otp Input", status: "Pending" },
