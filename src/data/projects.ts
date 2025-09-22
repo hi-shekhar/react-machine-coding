@@ -11,7 +11,7 @@ export const projects: Project[] = [
   { id: "project-2", name: "To-Do List", status: "Completed" },
   { id: "project-3", name: "Stopwatch", status: "Completed" },
   { id: "project-4", name: "Accordion", status: "Pending" },
-  { id: "project-5", name: "Otp Input", status: "Pending" },
+  { id: "project-5", name: "Otp Input", status: "Completed" },
   { id: "project-6", name: "Infinite Scroll", status: "Pending" },
   { id: "project-7", name: "Star Rating", status: "Pending" },
   { id: "project-8", name: "Typeahead", status: "Pending" },
