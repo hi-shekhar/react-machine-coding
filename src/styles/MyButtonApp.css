@@ -7,17 +7,18 @@
   cursor: pointer;
   transition: transform 0.2s ease-in-out, background-color 0.2s;
   color: #fff;
+  background-color: #6c757d;
 }
 
-.increment-btn {
+.success-btn {
   background-color: #2ecc71;
 }
 
-.decrement-btn {
+.error-btn {
   background-color: #e74c3c;
 }
 
-.reset-btn {
+.primary-btn {
   background-color: #3498db;
 }
 

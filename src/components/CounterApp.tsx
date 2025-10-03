@@ -24,17 +24,17 @@ const Counter = () => {
       <div className="counter-controls">
         <MyButtonApp
           label="Increment"
-          className="increment-btn"
+          className="success-btn"
           onClick={handleIncrement}
         />
         <MyButtonApp
           label="Decrement"
-          className="decrement-btn"
+          className="error-btn"
           onClick={handleDecrement}
         />
         <MyButtonApp
           label="Reset"
-          className="reset-btn"
+          className="primary-btn"
           onClick={handleReset}
         />
       </div>
