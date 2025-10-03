@@ -1,15 +1,16 @@
 import { useState } from "react";
 import "../styles/CounterApp.css";
+import MyButtonApp from "./MyButtonApp";
 
 const Counter = () => {
   const [count, setCount] = useState<number>(0);
 
   const handleIncrement = () => {
-    setCount(count + 1);
+    setCount((prevCount) => prevCount + 1);
   };
 
   const handleDecrement = () => {
-    setCount(count - 1);
+    setCount((prevCount) => prevCount - 1);
   };
 
   const handleReset = () => {
@@ -21,15 +22,21 @@ const Counter = () => {
       <h2>Counter App</h2>
       <p className="counter-value">Current Count: {count}</p>
       <div className="counter-controls">
-        <button onClick={handleIncrement} className="counter-btn increment-btn">
-          Increment
-        </button>
-        <button onClick={handleDecrement} className="counter-btn decrement-btn">
-          Decrement
-        </button>
-        <button onClick={handleReset} className="counter-btn reset-btn">
-          Reset
-        </button>
+        <MyButtonApp
+          label="Increment"
+          className="increment-btn"
+          onClick={handleIncrement}
+        />
+        <MyButtonApp
+          label="Decrement"
+          className="decrement-btn"
+          onClick={handleDecrement}
+        />
+        <MyButtonApp
+          label="Reset"
+          className="reset-btn"
+          onClick={handleReset}
+        />
       </div>
     </div>
   );

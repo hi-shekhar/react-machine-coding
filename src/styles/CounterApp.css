@@ -22,31 +22,3 @@
   display: flex;
   gap: 15px;
 }
-
-.counter-btn {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out, background-color 0.2s;
-  color: #fff;
-}
-
-.increment-btn {
-  background-color: #2ecc71;
-}
-
-.decrement-btn {
-  background-color: #e74c3c;
-}
-
-.reset-btn {
-  background-color: #3498db;
-}
-
-.counter-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
