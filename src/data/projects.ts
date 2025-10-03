@@ -19,4 +19,5 @@ export const projects: Project[] = [
   { id: "project-10", name: "Tic-Tac-Toe", status: "Pending" },
   { id: "project-11", name: "Image Carousel", status: "Pending" },
   { id: "project-12", name: "Toggle", status: "Completed" },
+  { id: "project-13", name: "Live Input Feedback", status: "Completed" },
 ];
