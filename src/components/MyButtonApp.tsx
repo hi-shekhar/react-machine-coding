@@ -2,7 +2,7 @@ import "../styles/MyButtonApp.css";
 
 interface MyButtonProps {
   label: string;
-  className: string;
+  className?: string;
   onClick: () => void;
 }
 
