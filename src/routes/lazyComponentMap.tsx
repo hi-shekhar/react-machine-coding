@@ -9,6 +9,8 @@ const ToggleApp = lazy(() => import("../components/ToggleApp"));
 const LiveInputFeedbackApp = lazy(
   () => import("../components/LiveInputFeedbackApp")
 );
+const SearchApp = lazy(() => import("../components/SearchApp"));
+
 export const componentMap: Record<string, React.FC> = {
   "project-1": CounterApp,
   "project-2": TodoListApp,
@@ -17,4 +19,5 @@ export const componentMap: Record<string, React.FC> = {
   "project-9": FormValidationApp,
   "project-12": ToggleApp,
   "project-13": LiveInputFeedbackApp,
+  "project-14": SearchApp,
 };
