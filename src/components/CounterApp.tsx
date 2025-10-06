@@ -1,21 +1,21 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import "../styles/CounterApp.css";
 import MyButtonApp from "./MyButtonApp";
 
 const Counter = () => {
   const [count, setCount] = useState<number>(0);
 
-  const handleIncrement = () => {
+  const handleIncrement = useCallback(() => {
     setCount((prevCount) => prevCount + 1);
-  };
+  }, []);
 
-  const handleDecrement = () => {
+  const handleDecrement = useCallback(() => {
     setCount((prevCount) => prevCount - 1);
-  };
+  }, []);
 
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     setCount(0);
-  };
+  }, []);
 
   return (
     <div className="counter-container">
