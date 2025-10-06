@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "../styles/MyButtonApp.css";
 
 interface MyButtonProps {
@@ -6,12 +7,13 @@ interface MyButtonProps {
   onClick: () => void;
 }
 
-const MyButtonApp = ({ label, className, onClick }: MyButtonProps) => {
+const MyButtonApp = memo(({ label, className, onClick }: MyButtonProps) => {
+  console.log("render", label);
   return (
     <button type="button" className={`my-btn  ${className}`} onClick={onClick}>
       {label}
     </button>
   );
-};
+});
 
 export default MyButtonApp;
