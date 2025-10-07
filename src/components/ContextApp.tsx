@@ -36,7 +36,7 @@ export function Section({ level, children }: SectionProp) {
   );
 }
 
-export default function Page() {
+export default function ContextApp() {
   return (
     <Section level={1}>
       <Heading>Title</Heading>
