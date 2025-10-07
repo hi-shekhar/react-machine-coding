@@ -21,4 +21,5 @@ export const projects: Project[] = [
   { id: "project-12", name: "Toggle", status: "Completed" },
   { id: "project-13", name: "Live Input Feedback", status: "Completed" },
   { id: "project-14", name: "Search", status: "Completed" },
+  { id: "project-15", name: "Context", status: "Completed" },
 ];

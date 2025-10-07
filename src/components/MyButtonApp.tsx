@@ -8,7 +8,6 @@ interface MyButtonProps {
 }
 
 const MyButtonApp = memo(({ label, className, onClick }: MyButtonProps) => {
-  console.log("render", label);
   return (
     <button type="button" className={`my-btn  ${className}`} onClick={onClick}>
       {label}
