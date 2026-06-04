@@ -5,7 +5,9 @@
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out, background-color 0.2s;
+  transition:
+    transform 0.2s ease-in-out,
+    background-color 0.2s;
   color: #fff;
   background-color: #6c757d;
 }
@@ -14,7 +16,8 @@
   background-color: #2ecc71;
 }
 
-.error-btn {
+.error-btn,
+.delete-btn {
   background-color: #e74c3c;
 }
 
@@ -25,4 +28,8 @@
 .my-btn:hover {
   transform: translateY(-2px);
   opacity: 0.9;
+}
+
+.my-btn:disabled {
+  opacity: 0.5;
 }

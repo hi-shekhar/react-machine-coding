@@ -2,17 +2,26 @@ import { memo } from "react";
 import "../styles/MyButtonApp.css";
 
 interface MyButtonProps {
+  type?: "button" | "submit" | "reset";
   label: string;
   className?: string;
-  onClick: () => void;
+  disabled?: boolean;
+  onClick?: () => void;
 }
 
-const MyButtonApp = memo(({ label, className, onClick }: MyButtonProps) => {
-  return (
-    <button type="button" className={`my-btn  ${className}`} onClick={onClick}>
-      {label}
-    </button>
-  );
-});
+const MyButtonApp = memo(
+  ({ type = "button", label, className, disabled, onClick }: MyButtonProps) => {
+    return (
+      <button
+        type={type}
+        className={`my-btn ${className}`}
+        onClick={onClick}
+        disabled={disabled}
+      >
+        {label}
+      </button>
+    );
+  },
+);
 
 export default MyButtonApp;

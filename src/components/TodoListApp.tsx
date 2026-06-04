@@ -1,36 +1,33 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import "../styles/TodoListApp.css";
+import MyButtonApp from "./MyButtonApp";
 
 interface Todo {
-  id: number;
+  id: string;
   text: string;
 }
 
 const TodoListApp = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [todoInput, setTodoInput] = useState("");
 
-  const handleAddTodo = (e: React.FormEvent) => {
+  const isAddDisabled = todoInput.trim() === "";
+
+  const handleAddTodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const inputValue = inputRef.current?.value;
-
-    if (!inputValue || inputValue.trim() === "") return;
-
     const newTodo: Todo = {
-      id: Date.now(),
-      text: inputValue,
+      id: crypto.randomUUID(),
+      text: todoInput.trim(),
     };
 
-    setTodos([...todos, newTodo]);
+    setTodos((prevTodos) => [...prevTodos, newTodo]);
 
-    if (inputRef.current) {
-      inputRef.current.value = "";
-    }
+    setTodoInput("");
   };
 
-  const handleDeleteTodo = (id: number) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+  const handleDeleteTodo = (id: string) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -38,25 +35,30 @@ const TodoListApp = () => {
       <h2>To-Do List</h2>
       <form className="todo-form" onSubmit={handleAddTodo}>
         <input
+          name="todoText"
           type="text"
-          ref={inputRef}
           placeholder="Add a new task..."
           className="todo-input"
+          value={todoInput}
+          required
+          onChange={(e) => setTodoInput(e.target.value)}
         />
-        <button type="submit" className="add-btn">
-          Add
-        </button>
+        <MyButtonApp
+          label="Add"
+          className="primary-btn"
+          type="submit"
+          disabled={isAddDisabled}
+        />
       </form>
       <ul className="todo-list">
         {todos.map((todo) => (
           <li key={todo.id}>
             <span className="todo-text">{todo.text}</span>
-            <button
-              onClick={() => handleDeleteTodo(todo.id)}
+            <MyButtonApp
+              label="Delete"
               className="delete-btn"
-            >
-              Delete
-            </button>
+              onClick={() => handleDeleteTodo(todo.id)}
+            />
           </li>
         ))}
       </ul>

@@ -65,19 +65,3 @@
   word-wrap: break-word;
   min-width: 0;
 }
-
-.delete-btn {
-  padding: 8px 16px;
-  border: none;
-  background-color: #e74c3c;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.2s;
-  flex-shrink: 0;
-}
-
-.delete-btn:hover {
-  background-color: #c0392b;
-}
